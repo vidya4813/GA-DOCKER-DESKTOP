@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vidya-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vidya-app
+  template:
+    metadata:
+      labels:
+        app: vidya-app
+    spec:
+      containers:
+      - name: vidya-app
+        image: vidya3579/my-app:latest
+        ports:
+        - containerPort: 80
